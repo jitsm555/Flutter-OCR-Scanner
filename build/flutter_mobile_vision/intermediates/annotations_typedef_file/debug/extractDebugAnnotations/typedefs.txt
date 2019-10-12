@@ -1,0 +1,2 @@
+D io/github/edufolly/fluttermobilevision/ui/CameraSource$FlashMode
+D io/github/edufolly/fluttermobilevision/ui/CameraSource$FocusMode

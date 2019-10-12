@@ -1,0 +1,4 @@
+#Sat Oct 12 16:32:28 IST 2019
+base.0=/Users/apple/dev/flutter/code/Flutter-OCR-Scanner/build/app/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
