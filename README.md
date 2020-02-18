@@ -15,4 +15,4 @@ This project contains the code of OCR usage in flutter, It is defined in very ea
 
 # Youtube Tutorial:
 
-[![Introduction to Flutter](https://i.imgur.com/VfENzF0.png)](https://www.youtube.com/watch?v=e35M5fA9BD8&t=51s "Little red riding hood - Click to Watch!")
+[![Introduction to Flutter](https://imgur.com/Bf4s5x3)](https://www.youtube.com/watch?v=e35M5fA9BD8&t=51s "Little red riding hood - Click to Watch!")
