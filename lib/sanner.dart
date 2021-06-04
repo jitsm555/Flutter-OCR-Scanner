@@ -1,29 +1,33 @@
 import 'dart:async';
-
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_vision/flutter_mobile_vision.dart';
 
-void main() => runApp(new MyApp());
-
-class MyApp extends StatefulWidget {
+class MyAppOCR extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyAppOCRState createState() => _MyAppOCRState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppOCRState extends State<MyAppOCR> {
   int _cameraOcr = FlutterMobileVision.CAMERA_BACK;
-  String _textValue = "sample";
+  String _textValue = "KLIK UNTUK MEMINDAI";
+  final FlutterTts flutterTts = FlutterTts();
 
   @override
   Widget build(BuildContext context) {
+    Future _speak() async {
+      await flutterTts.setLanguage("id-ID");
+      await flutterTts.speak(_textValue);
+    }
+
     return new MaterialApp(
       theme: new ThemeData(
-        primarySwatch: Colors.lime,
-        buttonColor: Colors.lime,
+        backgroundColor: Color(0xff002e8d),
+        buttonColor: Color(0xFFFEC800),
       ),
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text('Flutter Mobile Vision'),
+          title: new Text('Text To Speech'),
         ),
         body: Center(
             child: new ListView(
@@ -31,7 +35,7 @@ class _MyAppState extends State<MyApp> {
             new Text(_textValue),
             new RaisedButton(
               onPressed: _read,
-              child: new Text('Start Scanning'),
+              child: new Text('Mulai Kamera'),
             ),
           ],
         )),
@@ -51,7 +55,7 @@ class _MyAppState extends State<MyApp> {
         _textValue = texts[0].value;
       });
     } on Exception {
-      texts.add(new OcrText('Failed to recognize text.'));
+      texts.add(new OcrText('Gagal memindai teks.'));
     }
   }
 }
